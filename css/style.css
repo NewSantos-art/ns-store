@@ -1,0 +1,361 @@
+:root {
+  --ns-purple: #6D28D9;
+  --ns-purple-dark: #4C1D95;
+  --ns-cyan: #06B6D4;
+  --ns-cyan-light: #67E8F9;
+  --ns-bg: #0F0E17;
+  --ns-surface: #1E1B2E;
+  --ns-surface-light: #2A2640;
+  --ns-text: #F5F5F7;
+  --ns-text-muted: #A1A1AA;
+
+  --ns-font-display: 'Space Grotesk', sans-serif;
+  --ns-font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--ns-bg);
+  color: var(--ns-text);
+  font-family: var(--ns-font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ns-font-display);
+}
+
+a { text-decoration: none; }
+
+/* ===================== NAVBAR ===================== */
+.ns-navbar {
+  background-color: rgba(15, 14, 23, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.ns-logo {
+  font-family: var(--ns-font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--ns-text) !important;
+}
+
+.ns-logo-accent {
+  color: var(--ns-cyan);
+}
+
+.ns-navbar .nav-link {
+  color: var(--ns-text-muted);
+  font-weight: 500;
+  margin: 0 0.6rem;
+  transition: color 0.2s ease;
+}
+
+.ns-navbar .nav-link:hover,
+.ns-navbar .nav-link.active {
+  color: var(--ns-cyan-light);
+}
+
+.ns-btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--ns-text);
+  font-weight: 500;
+  padding: 0.4rem 1.1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.ns-btn-outline:hover {
+  border-color: var(--ns-cyan);
+  color: var(--ns-cyan-light);
+}
+
+.ns-cart-icon {
+  position: relative;
+  color: var(--ns-text);
+  font-size: 1.3rem;
+}
+
+.ns-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--ns-cyan);
+  color: var(--ns-bg);
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================== HERO ===================== */
+.ns-hero {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.18), transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(109, 40, 217, 0.35), transparent 50%),
+    var(--ns-bg);
+  padding: 5.5rem 0 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ns-eyebrow {
+  color: var(--ns-cyan-light);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.ns-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.ns-hero-text {
+  color: var(--ns-text-muted);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+.ns-btn-primary {
+  background: linear-gradient(135deg, var(--ns-purple), var(--ns-cyan));
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.7rem 1.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ns-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+  color: white;
+}
+
+.ns-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--ns-purple);
+  color: var(--ns-text);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.7rem 1.6rem;
+  transition: all 0.2s ease;
+}
+
+.ns-btn-ghost:hover {
+  background: rgba(109, 40, 217, 0.15);
+  border-color: var(--ns-cyan);
+  color: var(--ns-text);
+}
+
+/* Cards flutuantes do hero */
+.ns-hero-visual {
+  position: relative;
+  height: 380px;
+}
+
+.ns-hero-card {
+  position: absolute;
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 600;
+  font-family: var(--ns-font-display);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.ns-hero-card i {
+  font-size: 1.4rem;
+  color: var(--ns-cyan);
+}
+
+.ns-hero-card-1 { top: 10%;  left: 5%;  }
+.ns-hero-card-2 { top: 42%;  left: 30%; border-color: var(--ns-cyan); }
+.ns-hero-card-3 { top: 74%;  left: 8%;  }
+
+/* ===================== SEÇÕES GERAIS ===================== */
+.ns-section {
+  padding: 4rem 0;
+}
+
+.ns-section-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.ns-link-more {
+  color: var(--ns-cyan-light);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ===================== CATEGORIAS ===================== */
+.ns-category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 2rem 1rem;
+  color: var(--ns-text);
+  font-weight: 600;
+  font-family: var(--ns-font-display);
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.ns-category-card i {
+  font-size: 2rem;
+  color: var(--ns-cyan);
+  transition: transform 0.25s ease;
+}
+
+.ns-category-card:hover {
+  border-color: var(--ns-cyan);
+  color: var(--ns-text);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.15);
+}
+
+.ns-category-card:hover i {
+  transform: scale(1.15);
+}
+
+/* ===================== CARDS DE PRODUTO (catalogo.js usa essas classes) ===================== */
+.ns-product-card {
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.ns-product-card:hover {
+  border-color: var(--ns-cyan);
+  transform: translateY(-4px);
+}
+
+.ns-product-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background: var(--ns-surface-light);
+}
+
+.ns-product-body {
+  padding: 1.1rem;
+}
+
+.ns-product-name {
+  font-family: var(--ns-font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.ns-product-desc {
+  color: var(--ns-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.ns-product-price {
+  color: var(--ns-cyan-light);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.ns-product-rating {
+  color: #FBBF24;
+  font-size: 0.85rem;
+}
+
+/* ===================== FOOTER ===================== */
+.ns-footer {
+  background: var(--ns-surface);
+  padding: 3.5rem 0 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ns-footer-text {
+  color: var(--ns-text-muted);
+  font-size: 0.9rem;
+}
+
+.ns-footer-heading {
+  font-family: var(--ns-font-display);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.ns-footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.ns-footer-links a {
+  color: var(--ns-text-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.ns-footer-links a:hover {
+  color: var(--ns-cyan-light);
+}
+
+.ns-footer-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+  margin: 2rem 0 1rem;
+}
+
+.ns-footer-copy {
+  color: var(--ns-text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+@media (max-width: 991px) {
+  .ns-navbar .navbar-collapse {
+    margin-top: 1rem;
+  }
+  .ns-nav-actions {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ns-hero-title {
+    font-size: 2.1rem;
+  }
+  .ns-hero {
+    padding: 3.5rem 0 3rem;
+    text-align: center;
+  }
+  .ns-hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
