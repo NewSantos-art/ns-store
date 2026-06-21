@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nome": "Notebook Gamer Ryzen 7",
+    "categoria": "hardware",
+    "descricao": "16GB RAM, SSD 512GB, RTX 3050, tela 144Hz",
+    "preco": 4899.90,
+    "avaliacao": 4.8,
+    "imagem": "img/notebook-gamer.jpg",
+    "oferta": true
+  },
+  {
+    "id": 2,
+    "nome": "Monitor LED 27'' 144Hz",
+    "categoria": "hardware",
+    "descricao": "Full HD, painel IPS, baixa latência para jogos",
+    "preco": 1199.00,
+    "avaliacao": 4.6,
+    "imagem": "img/monitor-27.jpg",
+    "oferta": true
+  },
+  {
+    "id": 3,
+    "nome": "SSD NVMe 1TB",
+    "categoria": "hardware",
+    "descricao": "Leitura até 3500MB/s, ideal para upgrade rápido",
+    "preco": 389.90,
+    "avaliacao": 4.9,
+    "imagem": "img/ssd-1tb.jpg",
+    "oferta": true
+  },
+  {
+    "id": 4,
+    "nome": "Teclado Mecânico RGB",
+    "categoria": "hardware",
+    "descricao": "Switches blue, retroiluminação RGB, ABNT2",
+    "preco": 249.90,
+    "avaliacao": 4.5,
+    "imagem": "img/teclado-rgb.jpg",
+    "oferta": false
+  },
+  {
+    "id": 5,
+    "nome": "Mouse Gamer 16000 DPI",
+    "categoria": "hardware",
+    "descricao": "Sensor óptico de alta precisão, 7 botões programáveis",
+    "preco": 159.90,
+    "avaliacao": 4.4,
+    "imagem": "img/mouse-gamer.jpg",
+    "oferta": false
+  },
+  {
+    "id": 6,
+    "nome": "Roteador Wi-Fi 6 AX1800",
+    "categoria": "hardware",
+    "descricao": "Alta velocidade, ideal para home office e streaming",
+    "preco": 329.90,
+    "avaliacao": 4.3,
+    "imagem": "img/roteador-wifi6.jpg",
+    "oferta": false
+  },
+  {
+    "id": 7,
+    "nome": "Licença Windows 11 Pro",
+    "categoria": "software",
+    "descricao": "Licença original, ativação digital instantânea",
+    "preco": 599.00,
+    "avaliacao": 4.7,
+    "imagem": "img/windows11.jpg",
+    "oferta": true
+  },
+  {
+    "id": 8,
+    "nome": "Pacote Office 365 Anual",
+    "categoria": "software",
+    "descricao": "Word, Excel, PowerPoint e mais, 1TB OneDrive",
+    "preco": 449.00,
+    "avaliacao": 4.6,
+    "imagem": "img/office365.jpg",
+    "oferta": false
+  },
+  {
+    "id": 9,
+    "nome": "Antivírus Premium 1 Ano",
+    "categoria": "software",
+    "descricao": "Proteção completa contra vírus, ransomware e phishing",
+    "preco": 129.90,
+    "avaliacao": 4.5,
+    "imagem": "img/antivirus.jpg",
+    "oferta": false
+  },
+  {
+    "id": 10,
+    "nome": "Pendrive 64GB USB 3.0",
+    "categoria": "hardware",
+    "descricao": "Alta velocidade de transferência, compacto",
+    "preco": 49.90,
+    "avaliacao": 4.2,
+    "imagem": "img/pendrive-64gb.jpg",
+    "oferta": false
+  }
+]

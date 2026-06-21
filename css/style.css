@@ -263,6 +263,14 @@ a { text-decoration: none; }
   background: var(--ns-surface-light);
 }
 
+.ns-product-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ns-text-muted);
+  font-size: 2.5rem;
+}
+
 .ns-product-body {
   padding: 1.1rem;
 }
