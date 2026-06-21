@@ -367,3 +367,53 @@ a { text-decoration: none; }
     margin-right: auto;
   }
 }
+
+/* ===================== CABEÇALHO DE PÁGINAS INTERNAS ===================== */
+.ns-page-header {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(6, 182, 212, 0.15), transparent 50%),
+    var(--ns-bg);
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ns-page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ns-page-subtitle {
+  color: var(--ns-text-muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ===================== FILTROS DE CATEGORIA ===================== */
+.ns-filtros {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.ns-filtro-btn {
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--ns-text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.3rem;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+.ns-filtro-btn:hover {
+  border-color: var(--ns-cyan);
+  color: var(--ns-text);
+}
+
+.ns-filtro-btn.active {
+  background: linear-gradient(135deg, var(--ns-purple), var(--ns-cyan));
+  color: white;
+  border-color: transparent;
+}

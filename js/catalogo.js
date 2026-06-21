@@ -1,7 +1,12 @@
 // =====================================================
 // NS STORE — Carregamento dinâmico de produtos
-// Lê data/produtos.json e gera os cards na tela
+// Lê data/produtos.json, gera os cards na tela
+// e controla os filtros de categoria do Catálogo
 // =====================================================
+
+// Guarda a lista de produtos depois de carregada do JSON,
+// assim os filtros não precisam buscar o arquivo de novo a cada clique
+let listaDeProdutos = [];
 
 // Formata um número para o padrão de moeda brasileiro (R$ 1.234,56)
 function formatarPreco(valor) {
@@ -45,29 +50,61 @@ function criarCardProduto(produto) {
   `;
 }
 
-// Busca os produtos no JSON e renderiza dentro de um container específico
-// containerId: o id da div onde os cards vão entrar
-// filtro: função opcional para filtrar produtos (ex: somente ofertas)
+// Desenha uma lista de produtos dentro de um container específico
+function renderizarProdutos(containerId, produtos) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  if (produtos.length === 0) {
+    container.innerHTML = `<p class="text-secondary">Nenhum produto encontrado nessa categoria.</p>`;
+    return;
+  }
+
+  container.innerHTML = produtos.map(criarCardProduto).join("");
+}
+
+// Busca os produtos no JSON, guarda na variável global e renderiza
 function carregarProdutos(containerId, filtro = null) {
   const container = document.getElementById(containerId);
-  if (!container) return; // se a página não tiver esse container, não faz nada
+  if (!container) return;
 
   fetch("data/produtos.json")
     .then(resposta => resposta.json())
     .then(produtos => {
+      listaDeProdutos = produtos; // guarda tudo na variável global
       const listaFiltrada = filtro ? produtos.filter(filtro) : produtos;
-
-      if (listaFiltrada.length === 0) {
-        container.innerHTML = `<p class="text-secondary">Nenhum produto encontrado.</p>`;
-        return;
-      }
-
-      container.innerHTML = listaFiltrada.map(criarCardProduto).join("");
+      renderizarProdutos(containerId, listaFiltrada);
     })
     .catch(erro => {
       console.error("Erro ao carregar produtos:", erro);
       container.innerHTML = `<p class="text-danger">Não foi possível carregar os produtos.</p>`;
     });
+}
+
+// Aplica o filtro de categoria escolhido nos botões do Catálogo
+function aplicarFiltroCategoria(categoria) {
+  const produtosFiltrados = categoria === "todos"
+    ? listaDeProdutos
+    : listaDeProdutos.filter(produto => produto.categoria === categoria);
+
+  renderizarProdutos("catalogo-container", produtosFiltrados);
+}
+
+// Configura os cliques dos botões de filtro (só existe na página catalogo.html)
+function configurarFiltros() {
+  const botoes = document.querySelectorAll(".ns-filtro-btn");
+  if (botoes.length === 0) return; // se não tiver filtros na página, não faz nada
+
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      // Remove "active" de todos os botões e adiciona só no clicado
+      botoes.forEach(b => b.classList.remove("active"));
+      botao.classList.add("active");
+
+      const categoria = botao.dataset.categoria; // lê o atributo data-categoria
+      aplicarFiltroCategoria(categoria);
+    });
+  });
 }
 
 // Função placeholder do carrinho (vamos implementar de verdade no carrinho.js)
@@ -76,12 +113,14 @@ function adicionarAoCarrinho(idProduto) {
 }
 
 // ===================== EXECUÇÃO AUTOMÁTICA =====================
-// Quando a página carregar, decide o que mostrar dependendo de qual container existe
 
 document.addEventListener("DOMContentLoaded", () => {
   // Home: mostra só os produtos marcados como "oferta"
   carregarProdutos("ofertas-container", produto => produto.oferta === true);
 
-  // Catálogo completo: mostra todos os produtos (vamos usar isso no catalogo.html)
+  // Catálogo completo: mostra todos os produtos
   carregarProdutos("catalogo-container");
+
+  // Ativa os botões de filtro (se existirem na página)
+  configurarFiltros();
 });

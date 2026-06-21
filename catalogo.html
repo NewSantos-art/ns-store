@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — NS Store</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Nosso CSS customizado -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark ns-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand ns-logo" href="index.html">NS<span class="ns-logo-accent">Store</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="locacao.html">Locação</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 ns-nav-actions">
+          <a href="login.html" class="btn ns-btn-outline">Entrar</a>
+          <a href="carrinho.html" class="ns-cart-icon">
+            <i class="bi bi-cart3"></i>
+            <span class="ns-cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== CABEÇALHO DA PÁGINA ===================== -->
+  <header class="ns-page-header">
+    <div class="container">
+      <p class="ns-eyebrow">Catálogo Completo</p>
+      <h1 class="ns-page-title">Produtos</h1>
+      <p class="ns-page-subtitle">Hardware e software com a qualidade e segurança NS Store.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="container ns-section">
+
+      <!-- ===================== FILTROS DE CATEGORIA ===================== -->
+      <div class="ns-filtros mb-4">
+        <button class="btn ns-filtro-btn active" data-categoria="todos">Todos</button>
+        <button class="btn ns-filtro-btn" data-categoria="hardware">Hardware</button>
+        <button class="btn ns-filtro-btn" data-categoria="software">Software</button>
+      </div>
+
+      <!-- ===================== GRADE DE PRODUTOS ===================== -->
+      <div class="row g-4" id="catalogo-container">
+        <p class="text-secondary">Carregando produtos...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="ns-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <p class="ns-logo mb-2">NS<span class="ns-logo-accent">Store</span></p>
+          <p class="ns-footer-text">Novidades, Segurança e Bom Preço.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="ns-footer-heading">Navegação</h6>
+          <ul class="list-unstyled ns-footer-links">
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="locacao.html">Locação</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="ns-footer-heading">Contato</h6>
+          <ul class="list-unstyled ns-footer-links">
+            <li><i class="bi bi-geo-alt"></i> Palmas, TO</li>
+            <li><i class="bi bi-envelope"></i> contato@nsstore.com.br</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="ns-footer-divider">
+      <p class="ns-footer-copy">&copy; 2026 NS Store — Projeto Acadêmico.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Nosso JavaScript -->
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
