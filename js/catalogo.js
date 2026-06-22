@@ -26,6 +26,27 @@ function gerarEstrelas(nota) {
   return `<span class="ns-product-rating">${estrelas} <span class="text-secondary">(${nota})</span></span>`;
 }
 
+// Gera o HTML de um único card de serviço
+function criarCardServico(servico) {
+  return `
+    <div class="col-md-6 col-lg-4">
+      <div class="ns-service-card">
+        <div class="ns-service-icon">
+          <i class="bi ${servico.icone}"></i>
+        </div>
+        <p class="ns-service-name">${servico.nome}</p>
+        <p class="ns-service-desc">${servico.descricao}</p>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <span class="ns-service-price">A partir de ${formatarPreco(servico.precoApartir)}</span>
+        </div>
+        <button class="btn ns-btn-primary w-100 mt-3" onclick="contratarServico(${servico.id})">
+          Contratar
+        </button>
+      </div>
+    </div>
+  `;
+}
+
 // Gera o HTML de um único card de produto
 function criarCardProduto(produto) {
   return `
@@ -112,6 +133,27 @@ function adicionarAoCarrinho(idProduto) {
   alert("Produto " + idProduto + " adicionado ao carrinho! (em breve, isso vai funcionar de verdade)");
 }
 
+// Função placeholder de contratação de serviço
+function contratarServico(idServico) {
+  alert("Serviço " + idServico + " selecionado! (em breve, isso vai abrir um formulário de solicitação)");
+}
+
+// Busca os serviços no JSON e renderiza no container de serviços
+function carregarServicos(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  fetch("data/servicos.json")
+    .then(resposta => resposta.json())
+    .then(servicos => {
+      container.innerHTML = servicos.map(criarCardServico).join("");
+    })
+    .catch(erro => {
+      console.error("Erro ao carregar serviços:", erro);
+      container.innerHTML = `<p class="text-danger">Não foi possível carregar os serviços.</p>`;
+    });
+}
+
 // ===================== EXECUÇÃO AUTOMÁTICA =====================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -123,4 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Ativa os botões de filtro (se existirem na página)
   configurarFiltros();
+
+  // Página de Serviços: mostra todos os serviços
+  carregarServicos("servicos-container");
+  
 });

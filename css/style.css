@@ -417,3 +417,52 @@ a { text-decoration: none; }
   color: white;
   border-color: transparent;
 }
+
+/* ===================== CARDS DE SERVIÇO ===================== */
+.ns-service-card {
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.8rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.ns-service-card:hover {
+  border-color: var(--ns-cyan);
+  transform: translateY(-4px);
+}
+
+.ns-service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--ns-purple), var(--ns-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+.ns-service-name {
+  font-family: var(--ns-font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ns-service-desc {
+  color: var(--ns-text-muted);
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.ns-service-price {
+  color: var(--ns-cyan-light);
+  font-weight: 600;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 101,
+    "nome": "Formatação e Reinstalação",
+    "descricao": "Formatação completa com reinstalação do sistema operacional e drivers",
+    "precoApartir": 89.90,
+    "icone": "bi-arrow-repeat"
+  },
+  {
+    "id": 102,
+    "nome": "Manutenção Preventiva",
+    "descricao": "Limpeza interna, troca de pasta térmica e diagnóstico geral do equipamento",
+    "precoApartir": 119.90,
+    "icone": "bi-tools"
+  },
+  {
+    "id": 103,
+    "nome": "Montagem e Configuração de Redes",
+    "descricao": "Instalação de roteadores, switches e configuração de rede local",
+    "precoApartir": 149.90,
+    "icone": "bi-router"
+  },
+  {
+    "id": 104,
+    "nome": "Cabeamento Estruturado",
+    "descricao": "Projeto e instalação de cabeamento de rede para empresas e residências",
+    "precoApartir": 249.90,
+    "icone": "bi-diagram-3"
+  },
+  {
+    "id": 105,
+    "nome": "Segurança Digital",
+    "descricao": "Instalação de antivírus, firewall e configuração de backup automático",
+    "precoApartir": 99.90,
+    "icone": "bi-shield-lock"
+  },
+  {
+    "id": 106,
+    "nome": "Recuperação de Dados",
+    "descricao": "Recuperação de arquivos perdidos ou corrompidos em HDs e SSDs",
+    "precoApartir": 199.90,
+    "icone": "bi-hdd"
+  },
+  {
+    "id": 107,
+    "nome": "Suporte Remoto",
+    "descricao": "Atendimento técnico à distância para resolução rápida de problemas",
+    "precoApartir": 59.90,
+    "icone": "bi-headset"
+  },
+  {
+    "id": 108,
+    "nome": "Consultoria em TI",
+    "descricao": "Análise e planejamento de infraestrutura tecnológica para sua empresa",
+    "precoApartir": 299.90,
+    "icone": "bi-graph-up"
+  }
+]
