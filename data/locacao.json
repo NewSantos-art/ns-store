@@ -1,0 +1,56 @@
+[
+  {
+    "id": 201,
+    "nome": "Notebook Corporativo i5",
+    "descricao": "8GB RAM, SSD 256GB, ideal para home office e eventos",
+    "precoDiaria": 49.90,
+    "precoMensal": 599.90,
+    "icone": "bi-laptop",
+    "disponivel": true
+  },
+  {
+    "id": 202,
+    "nome": "Notebook Gamer i7",
+    "descricao": "16GB RAM, RTX 3060, para edição de vídeo e jogos",
+    "precoDiaria": 89.90,
+    "precoMensal": 999.90,
+    "icone": "bi-laptop",
+    "disponivel": true
+  },
+  {
+    "id": 203,
+    "nome": "Projetor Full HD",
+    "descricao": "3500 lumens, ideal para apresentações e eventos corporativos",
+    "precoDiaria": 69.90,
+    "precoMensal": 799.90,
+    "icone": "bi-projector",
+    "disponivel": true
+  },
+  {
+    "id": 204,
+    "nome": "Servidor Rack 1U",
+    "descricao": "Xeon, 32GB RAM, para hospedagem e processamento local",
+    "precoDiaria": 149.90,
+    "precoMensal": 1799.90,
+    "icone": "bi-server",
+    "disponivel": false
+  },
+  {
+    "id": 205,
+    "nome": "Roteador Empresarial",
+    "descricao": "Suporta até 100 dispositivos simultâneos, ideal para eventos",
+    "precoDiaria": 29.90,
+    "precoMensal": 349.90,
+    "icone": "bi-router",
+    "disponivel": true
+  },
+  {
+    "id": 206,
+    "nome": "Switch Gerenciável 24 Portas",
+    "descricao": "Para expansão de rede em escritórios e eventos de grande porte",
+    "precoDiaria": 39.90,
+    "precoMensal": 449.90,
+    "icone": "bi-hdd-network",
+    "disponivel": true
+  }
+]

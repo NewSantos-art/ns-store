@@ -133,9 +133,70 @@ function adicionarAoCarrinho(idProduto) {
   alert("Produto " + idProduto + " adicionado ao carrinho! (em breve, isso vai funcionar de verdade)");
 }
 
+// Gera o HTML de um único card de locação
+function criarCardLocacao(equipamento) {
+  const badge = equipamento.disponivel
+    ? `<span class="ns-badge-disponivel">Disponível</span>`
+    : `<span class="ns-badge-indisponivel">Indisponível</span>`;
+
+  const botao = equipamento.disponivel
+    ? `<button class="btn ns-btn-primary w-100 mt-3" onclick="solicitarLocacao(${equipamento.id})">
+         <i class="bi bi-calendar-check"></i> Solicitar Locação
+       </button>`
+    : `<button class="btn w-100 mt-3" disabled style="opacity:0.4; background:var(--ns-surface-light); color:var(--ns-text-muted); border:none; border-radius:10px; padding:0.7rem;">
+         Indisponível
+       </button>`;
+
+  return `
+    <div class="col-md-6 col-lg-4">
+      <div class="ns-service-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="ns-service-icon">
+            <i class="bi ${equipamento.icone}"></i>
+          </div>
+          ${badge}
+        </div>
+        <p class="ns-service-name">${equipamento.nome}</p>
+        <p class="ns-service-desc">${equipamento.descricao}</p>
+        <div class="ns-locacao-precos mt-3">
+          <div class="ns-locacao-preco-item">
+            <span class="ns-locacao-label">Diária</span>
+            <span class="ns-service-price">${formatarPreco(equipamento.precoDiaria)}</span>
+          </div>
+          <div class="ns-locacao-preco-item">
+            <span class="ns-locacao-label">Mensal</span>
+            <span class="ns-service-price">${formatarPreco(equipamento.precoMensal)}</span>
+          </div>
+        </div>
+        ${botao}
+      </div>
+    </div>
+  `;
+}
 // Função placeholder de contratação de serviço
 function contratarServico(idServico) {
   alert("Serviço " + idServico + " selecionado! (em breve, isso vai abrir um formulário de solicitação)");
+}
+
+// Função placeholder de solicitação de locação
+function solicitarLocacao(idEquipamento) {
+  alert("Equipamento " + idEquipamento + " selecionado! (em breve, isso vai abrir o formulário de locação)");
+}
+
+// Busca os equipamentos no JSON e renderiza no container de locação
+function carregarLocacao(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  fetch("data/locacao.json")
+    .then(resposta => resposta.json())
+    .then(equipamentos => {
+      container.innerHTML = equipamentos.map(criarCardLocacao).join("");
+    })
+    .catch(erro => {
+      console.error("Erro ao carregar locação:", erro);
+      container.innerHTML = `<p class="text-danger">Não foi possível carregar os equipamentos.</p>`;
+    });
 }
 
 // Busca os serviços no JSON e renderiza no container de serviços
@@ -168,5 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Página de Serviços: mostra todos os serviços
   carregarServicos("servicos-container");
-  
+
+  // Página de Locação: mostra todos os equipamentos
+  carregarLocacao("locacao-container");
 });

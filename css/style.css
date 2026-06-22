@@ -466,3 +466,47 @@ a { text-decoration: none; }
   font-weight: 600;
   font-size: 0.95rem;
 }
+
+/* ===================== LOCAÇÃO — BADGES E PREÇOS ===================== */
+.ns-badge-disponivel {
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--ns-cyan-light);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ns-badge-indisponivel {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ns-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ns-locacao-precos {
+  display: flex;
+  gap: 1rem;
+  background: var(--ns-surface-light);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+}
+
+.ns-locacao-preco-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.ns-locacao-label {
+  color: var(--ns-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
