@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho — NS Store</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark ns-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand ns-logo" href="index.html">NS<span class="ns-logo-accent">Store</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="locacao.html">Locação</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3 ns-nav-actions">
+          <a href="login.html" class="btn ns-btn-outline">Entrar</a>
+          <a href="carrinho.html" class="ns-cart-icon">
+            <i class="bi bi-cart3"></i>
+            <span class="ns-cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="ns-page-header">
+    <div class="container">
+      <p class="ns-eyebrow">Resumo da compra</p>
+      <h1 class="ns-page-title">Carrinho</h1>
+    </div>
+  </header>
+
+  <main class="container ns-section">
+    <div class="row g-4">
+
+      <!-- ===== LISTA DE ITENS ===== -->
+      <div class="col-lg-8">
+        <div id="carrinho-container">
+          <p class="text-secondary">Carregando carrinho...</p>
+        </div>
+      </div>
+
+      <!-- ===== RESUMO DO PEDIDO ===== -->
+      <div class="col-lg-4">
+        <div id="carrinho-resumo" class="ns-painel-card d-none">
+
+          <!-- Cálculo de frete via CEP -->
+          <h6 class="ns-painel-title mb-3">
+            <i class="bi bi-geo-alt"></i> Calcular Frete
+          </h6>
+          <div class="d-flex gap-2 mb-2">
+            <input type="text" id="cep-input" class="ns-form-input"
+              placeholder="00000-000" maxlength="9"
+              oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{5})(\d)/,'$1-$2')">
+            <button class="btn ns-btn-primary px-3" onclick="buscarCEP()">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+          <p id="cep-resultado" class="ns-footer-text mb-3" style="font-size:0.85rem;"></p>
+
+          <hr class="ns-footer-divider">
+
+          <!-- Totais -->
+          <h6 class="ns-painel-title mb-3">
+            <i class="bi bi-receipt"></i> Resumo
+          </h6>
+          <div class="d-flex justify-content-between mb-2">
+            <span style="color:var(--ns-text-muted)">Subtotal</span>
+            <span id="resumo-subtotal">R$ 0,00</span>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+            <span style="color:var(--ns-text-muted)">Frete</span>
+            <span id="frete-valor" data-frete="0">—</span>
+          </div>
+          <div class="d-flex justify-content-between mb-4">
+            <strong>Total</strong>
+            <strong id="resumo-total" style="color:var(--ns-cyan-light)">R$ 0,00</strong>
+          </div>
+
+          <button class="btn ns-btn-primary w-100" onclick="alert('Pedido finalizado! (simulado)')">
+            <i class="bi bi-bag-check"></i> Finalizar Pedido
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Toast de confirmação -->
+  <div id="ns-toast" class="ns-toast"></div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="ns-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <p class="ns-logo mb-2">NS<span class="ns-logo-accent">Store</span></p>
+          <p class="ns-footer-text">Novidades, Segurança e Bom Preço.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="ns-footer-heading">Navegação</h6>
+          <ul class="list-unstyled ns-footer-links">
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="locacao.html">Locação</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="ns-footer-heading">Contato</h6>
+          <ul class="list-unstyled ns-footer-links">
+            <li><i class="bi bi-geo-alt"></i> Palmas, TO</li>
+            <li><i class="bi bi-envelope"></i> contato@nsstore.com.br</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="ns-footer-divider">
+      <p class="ns-footer-copy">&copy; 2026 NS Store — Projeto Acadêmico.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="js/carrinho.js"></script>
+</body>
+</html>

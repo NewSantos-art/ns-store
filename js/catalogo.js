@@ -61,7 +61,7 @@ function criarCardProduto(produto) {
           ${gerarEstrelas(produto.avaliacao)}
           <div class="d-flex justify-content-between align-items-center mt-2">
             <span class="ns-product-price">${formatarPreco(produto.preco)}</span>
-            <button class="btn btn-sm ns-btn-primary" onclick="adicionarAoCarrinho(${produto.id})">
+            <button class="btn btn-sm ns-btn-primary" onclick="adicionarAoCarrinho(${produto.id}, '${produto.nome}', ${produto.preco})">
               <i class="bi bi-cart-plus"></i>
             </button>
           </div>
@@ -128,9 +128,32 @@ function configurarFiltros() {
   });
 }
 
-// Função placeholder do carrinho (vamos implementar de verdade no carrinho.js)
-function adicionarAoCarrinho(idProduto) {
-  alert("Produto " + idProduto + " adicionado ao carrinho! (em breve, isso vai funcionar de verdade)");
+// Função placeholder do carrinho
+function adicionarAoCarrinho(id, nome, preco) {
+  const carrinho = JSON.parse(localStorage.getItem("ns-carrinho")) || [];
+  const itemExistente = carrinho.find(item => item.id === id);
+
+  if (itemExistente) {
+    itemExistente.quantidade += 1;
+  } else {
+    carrinho.push({ id, nome, preco, quantidade: 1 });
+  }
+
+  localStorage.setItem("ns-carrinho", JSON.stringify(carrinho));
+
+  // Atualiza o badge do carrinho
+  const total = carrinho.reduce((s, i) => s + i.quantidade, 0);
+  document.querySelectorAll(".ns-cart-badge").forEach(b => b.textContent = total);
+
+  // Mostra o toast se estiver na página
+  const toast = document.getElementById("ns-toast");
+  if (toast) {
+    toast.textContent = nome + " adicionado ao carrinho!";
+    toast.classList.add("ns-toast-visible");
+    setTimeout(() => toast.classList.remove("ns-toast-visible"), 2500);
+  } else {
+    alert(nome + " adicionado ao carrinho!");
+  }
 }
 
 // Gera o HTML de um único card de locação

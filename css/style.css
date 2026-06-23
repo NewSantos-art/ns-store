@@ -689,3 +689,122 @@ a { text-decoration: none; }
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* ===================== CARRINHO ===================== */
+.ns-carrinho-vazio {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--ns-text-muted);
+}
+
+.ns-carrinho-vazio i {
+  font-size: 3.5rem;
+  color: var(--ns-purple);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.ns-carrinho-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.ns-carrinho-item:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.ns-carrinho-info {
+  flex: 1;
+}
+
+.ns-carrinho-nome {
+  font-family: var(--ns-font-display);
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+
+.ns-carrinho-preco {
+  color: var(--ns-text-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.ns-carrinho-qtd {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ns-surface-light);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+}
+
+.ns-carrinho-qtd button {
+  background: none;
+  border: none;
+  color: var(--ns-text);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.ns-carrinho-qtd button:hover {
+  color: var(--ns-cyan-light);
+}
+
+.ns-carrinho-qtd span {
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+.ns-carrinho-subtotal {
+  font-weight: 700;
+  color: var(--ns-cyan-light);
+  min-width: 100px;
+  text-align: right;
+}
+
+.ns-carrinho-remover {
+  background: none;
+  border: none;
+  color: var(--ns-text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  padding: 0.3rem;
+}
+
+.ns-carrinho-remover:hover {
+  color: #F87171;
+}
+
+/* ===================== TOAST ===================== */
+.ns-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--ns-surface);
+  border: 1px solid var(--ns-cyan);
+  color: var(--ns-text);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}
+
+.ns-toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
