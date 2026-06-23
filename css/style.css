@@ -605,3 +605,87 @@ a { text-decoration: none; }
   min-height: 1.2rem;
   margin: 0;
 }
+
+/* ===================== PAINEL DO CLIENTE ===================== */
+.ns-painel-section {}
+
+.ns-painel-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ns-painel-title i {
+  color: var(--ns-cyan);
+}
+
+.ns-painel-card {
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.8rem;
+  overflow-x: auto;
+}
+
+.ns-painel-valor {
+  color: var(--ns-text);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Tabela */
+.ns-table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.ns-table th {
+  color: var(--ns-text-muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1rem 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.ns-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--ns-text);
+}
+
+.ns-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status badges */
+.ns-status {
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ns-status-entregue {
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--ns-cyan-light);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.ns-status-andamento {
+  background: rgba(251, 191, 36, 0.15);
+  color: #FCD34D;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.ns-status-pendente {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ns-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta — NS Store</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark ns-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand ns-logo" href="index.html">NS<span class="ns-logo-accent">Store</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="locacao.html">Locação</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3 ns-nav-actions">
+          <button class="btn ns-btn-outline" onclick="logout()">
+            <i class="bi bi-box-arrow-right"></i> Sair
+          </button>
+          <a href="carrinho.html" class="ns-cart-icon">
+            <i class="bi bi-cart3"></i>
+            <span class="ns-cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="ns-page-header">
+    <div class="container">
+      <p class="ns-eyebrow">Área do Cliente</p>
+      <h1 class="ns-page-title">Minha Conta</h1>
+      <p class="ns-page-subtitle" id="painel-email">Carregando...</p>
+    </div>
+  </header>
+
+  <main class="container ns-section">
+
+    <!-- ===================== DADOS CADASTRAIS ===================== -->
+    <section class="ns-painel-section mb-5">
+      <h2 class="ns-painel-title"><i class="bi bi-person-circle"></i> Dados Cadastrais</h2>
+      <div class="ns-painel-card">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <p class="ns-form-label">E-mail</p>
+            <p id="dados-email" class="ns-painel-valor">—</p>
+          </div>
+          <div class="col-md-6">
+            <p class="ns-form-label">UID do usuário</p>
+            <p id="dados-uid" class="ns-painel-valor" style="font-size:0.78rem; word-break:break-all;">—</p>
+          </div>
+          <div class="col-md-6">
+            <p class="ns-form-label">Conta criada em</p>
+            <p id="dados-criacao" class="ns-painel-valor">—</p>
+          </div>
+          <div class="col-md-6">
+            <p class="ns-form-label">Último acesso</p>
+            <p id="dados-ultimo-login" class="ns-painel-valor">—</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MEUS PEDIDOS ===================== -->
+    <section class="ns-painel-section mb-5">
+      <h2 class="ns-painel-title"><i class="bi bi-bag-check"></i> Meus Pedidos</h2>
+      <div class="ns-painel-card">
+        <table class="ns-table w-100">
+          <thead>
+            <tr>
+              <th>Pedido</th>
+              <th>Produto</th>
+              <th>Data</th>
+              <th>Valor</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#NS-0001</td>
+              <td>Notebook Gamer Ryzen 7</td>
+              <td>10/06/2026</td>
+              <td>R$ 4.899,90</td>
+              <td><span class="ns-status ns-status-entregue">Entregue</span></td>
+            </tr>
+            <tr>
+              <td>#NS-0002</td>
+              <td>SSD NVMe 1TB</td>
+              <td>18/06/2026</td>
+              <td>R$ 389,90</td>
+              <td><span class="ns-status ns-status-andamento">Em andamento</span></td>
+            </tr>
+            <tr>
+              <td>#NS-0003</td>
+              <td>Licença Windows 11 Pro</td>
+              <td>21/06/2026</td>
+              <td>R$ 599,00</td>
+              <td><span class="ns-status ns-status-pendente">Pendente</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== MEUS SERVIÇOS ===================== -->
+    <section class="ns-painel-section mb-5">
+      <h2 class="ns-painel-title"><i class="bi bi-tools"></i> Meus Serviços</h2>
+      <div class="ns-painel-card">
+        <table class="ns-table w-100">
+          <thead>
+            <tr>
+              <th>Serviço</th>
+              <th>Data</th>
+              <th>Valor</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Formatação e Reinstalação</td>
+              <td>15/06/2026</td>
+              <td>R$ 89,90</td>
+              <td><span class="ns-status ns-status-entregue">Concluído</span></td>
+            </tr>
+            <tr>
+              <td>Suporte Remoto</td>
+              <td>20/06/2026</td>
+              <td>R$ 59,90</td>
+              <td><span class="ns-status ns-status-andamento">Em andamento</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="ns-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <p class="ns-logo mb-2">NS<span class="ns-logo-accent">Store</span></p>
+          <p class="ns-footer-text">Novidades, Segurança e Bom Preço.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="ns-footer-heading">Navegação</h6>
+          <ul class="list-unstyled ns-footer-links">
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="locacao.html">Locação</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="ns-footer-heading">Contato</h6>
+          <ul class="list-unstyled ns-footer-links">
+            <li><i class="bi bi-geo-alt"></i> Palmas, TO</li>
+            <li><i class="bi bi-envelope"></i> contato@nsstore.com.br</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="ns-footer-divider">
+      <p class="ns-footer-copy">&copy; 2026 NS Store — Projeto Acadêmico.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/painel.js"></script>
+</body>
+</html>
