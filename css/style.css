@@ -510,3 +510,98 @@ a { text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
+/* ===================== PÁGINA DE LOGIN / AUTH ===================== */
+.ns-auth-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(109, 40, 217, 0.2), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.15), transparent 50%),
+    var(--ns-bg);
+}
+
+.ns-auth-card {
+  background: var(--ns-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+.ns-auth-tabs {
+  display: flex;
+  gap: 0.3rem;
+  background: var(--ns-surface-light);
+  border-radius: 10px;
+  padding: 0.3rem;
+  margin-bottom: 1.8rem;
+}
+
+.ns-auth-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--ns-text-muted);
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.5rem 0.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ns-auth-tab.active {
+  background: var(--ns-surface);
+  color: var(--ns-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ns-form-label {
+  display: block;
+  color: var(--ns-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.ns-form-input {
+  width: 100%;
+  background: var(--ns-surface-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  color: var(--ns-text);
+  font-size: 0.95rem;
+  font-family: var(--ns-font-body);
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.ns-form-input:focus {
+  border-color: var(--ns-cyan);
+}
+
+.ns-form-input::placeholder {
+  color: var(--ns-text-muted);
+  opacity: 0.6;
+}
+
+.ns-form-erro {
+  color: #F87171;
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+  margin: 0;
+}
+
+.ns-form-ok {
+  color: var(--ns-cyan-light);
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+  margin: 0;
+}
